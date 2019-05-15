@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <title>Promises 101</title>
+  <body>
+    <h1>Promises - race</h1>
+    <h2>see results in console</h2>
+
+  </body>
+<script>
+
+  (function() {
+    const asimplePromise = (delay) => {
+     return new Promise((resolve, reject) => {
+       setTimeout(() => resolve('resolved after ' + delay + 'ms'), delay );
+
+     });
+    }
+
+    Promise.race([asimplePromise(1000), asimplePromise(2000), asimplePromise(3000), asimplePromise(4000), asimplePromise(5000)])
+      .then((value) => console.log(value)) // you get the results immediatley after the first promise is resolved
+      .catch(error => console.log(error))
+  })()
+</script>
+</html>

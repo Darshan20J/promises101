@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <title>Promises 101</title>
+  <body>
+    <h1>Promises - reject</h1>
+    <h2>see results in console</h2>
+
+  </body>
+<script>
+
+  (function() {
+    const asimplePromise = () => {
+     return new Promise((resolve, reject) => {
+       setTimeout(() => reject('value rejected from promise'), 1000 )
+     });
+    }
+
+    console.info('promise rejects after 1 second')
+    asimplePromise()
+      .then((value) => console.log(value)) // this will never gets executed as we are rejeting the promise
+      .catch((error) => console.log(error))
+  })()
+</script>
+</html>

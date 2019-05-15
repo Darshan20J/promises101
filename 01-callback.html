@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <title>Promises 101</title>
+  <body>
+    <h1>callbacks</h1>
+    <h2>see results in console</h2>
+  </body>
+<script>
+
+  (function() {
+    //this is a simple function that prints to console
+    function myCallBackFunction() {
+      //call me after 5000 milliseconds
+      console.log('Time elapsed')
+    }
+
+    // calls a function after time interval has passed
+    setTimeout(myCallBackFunction, 5000)
+  })()
+</script>
+</html>
